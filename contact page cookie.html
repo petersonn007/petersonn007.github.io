@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+		body {
+			background-image: url("http://www.spunkmeyer.com/uploadedImages/Our_Products/Food/55684.PHOTO.01.JPG");
+			}
+		input[type=text] {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+		textarea {
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+		input[type=button], input[type=submit], input[type=reset] {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+		</style>
+		
+	    <script>
+var today = new Date();
+  var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+
+  function setCookie(name, value)
+  {
+    document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+  }
+function putCookie(form)
+                //this should set the UserName cookie to the proper value;
+  {
+   setCookie("userName", form[0].usrname.value);
+
+    return true;
+  }
+
+  </script>
+
+  
+
+</head>
+
+<body>
+
+<h1>This is the page that you can use to contact me to share some insightful remarks, or you can just troll me. It's not like I can really stop you.</h1>
+<form>
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name">
+  <br />
+  <label for="email">Email</label>
+  <input type="text" id="email" name="email">
+</form>
+<br />
+<br />
+<br />
+<br />
+<p> Insightful remarks </p>
+<form>
+  <textarea></textarea>
+</form>
+<input type="submit" value="Submit" id="submit" onclick="putCookie(document.getElementsByTagName('form'));">
+</body>
+</html>
